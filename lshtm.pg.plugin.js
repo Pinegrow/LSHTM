@@ -26,9 +26,14 @@ $(function() {
         ////////////////////////////////////
 
 
+        var version = 5.5;
+
+        if(parseFloat(crsaGetVersion()) < version) {
+            pinegrow.showAlert(`LSHTM plugin requires Pinegrow Web Editor ${version} or higher.`, 'Please update Pinegrow Web Editor');
+            return;
+        }
 
 
-        
 
         //Create new Pinegrow framework object
         var f = new PgFramework('lshtm', 'LSHTM Plugin');
